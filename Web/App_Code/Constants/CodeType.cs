@@ -89,36 +89,15 @@ public enum CodeType : int
     /// 客户端关系不能为自己
     /// </summary>
     ClientRelateInvalid = 3042,
-
     /// <summary>
-    /// 故事不存在
+    /// 客户端没有可用复活卡
     /// </summary>
-    StoryNotExists = 4001,
+    ClientHaveNotCard = 3101,
     /// <summary>
-    /// 故事内容不能为空
+    /// 没有题目了
     /// </summary>
-    StoryContentRequired = 4011,
-    /// <summary>
-    /// 客户端续写故事不够
-    /// </summary>
-    StoryRelayStoryCountLess = 4021,
-    /// <summary>
-    /// 故事分支不存在
-    /// </summary>
-    StoryRelayNotExists = 4022,
-    /// <summary>
-    /// 客户端续写过此分支
-    /// </summary>
-    StoryRelayStoryRelayExists = 4031,
-    /// <summary>
-    /// 当前客户端非故事作者
-    /// </summary>
-    StoryNotAuthor = 4031,
-    /// <summary>
-    /// 当前客户端非故事续作作者
-    /// </summary>
-    StoryRelayNotAuthor = 4032,
-
+    GameDinosaurEnd = 4001,
+    
     /// <summary>
     /// 数据库未知错误
     /// </summary>

@@ -8,20 +8,6 @@ using Budong.Common.Utils;
 public class ClientRelateData
 {
     /// <summary>
-    /// 根据客户端关系编号获取关系信息
-    /// </summary>
-    /// <param name="fromClientId">int 邀请客户端编号</param>
-    /// <param name="relateClientId">int 被邀请客户端编号</param>
-    /// <returns>Hash 操作结果</returns>
-    public static Hash GetByFromAndTo(int fromClientId, int toClientId)
-    {
-        string sql = "SELECT * FROM tc_client_relate WHERE fromClientId=@0 AND toClientId=@1";
-        using (MySqlADO ado = new MySqlADO())
-        {
-            return ado.GetHash(sql, fromClientId, toClientId);
-        }
-    }
-    /// <summary>
     /// 创建关系条目
     /// </summary>
     /// <param name="fromClientId">int 邀请客户端编号</param>

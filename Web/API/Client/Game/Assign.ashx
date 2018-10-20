@@ -1,14 +1,13 @@
-﻿<%@ WebHandler Language="C#" Class="Delete" %>
+﻿<%@ WebHandler Language="C#" Class="Assign" %>
 
 using System.Web;
 using Budong.Common.Utils;
 
-public class Delete : IHttpHandler {
+public class Assign : IHttpHandler {
 
     public void ProcessRequest(HttpContext context)
     {
         //  格式化参数
-        int storyId = Parse.ToInt(context.Request.Params["storyId"]);
         string session3rd = context.Request.Params["session3rd"];
 
         //  定义返回结果
@@ -16,7 +15,7 @@ public class Delete : IHttpHandler {
 
         if (result.ToInt("code") == 0)
         {
-            result = ClientStoryService.Delete(result.ToHash("data"), storyId);
+            result = GameService.Assign(result.ToHash("data"));
         }
 
         //  记录日志

@@ -1,15 +1,15 @@
-﻿<%@ WebHandler Language="C#" Class="Bookmark" %>
+﻿<%@ WebHandler Language="C#" Class="Answer" %>
 
 using System.Web;
 using Budong.Common.Utils;
 
-public class Bookmark : IHttpHandler {
+public class Answer : IHttpHandler {
 
     public void ProcessRequest(HttpContext context)
     {
         //  格式化参数
-        int storyId = Parse.ToInt(context.Request.Params["storyId"]);
-        int storyRelayId = Parse.ToInt(context.Request.Params["storyRelayId"]);
+        int dinosaurId = Parse.ToInt(context.Request.Params["dinosaurId"]);
+        int _result  = Parse.ToInt(context.Request.Params["result"]);
         string session3rd = context.Request.Params["session3rd"];
 
         //  定义返回结果
@@ -17,7 +17,7 @@ public class Bookmark : IHttpHandler {
 
         if (result.ToInt("code") == 0)
         {
-            result = ClientBookmarkService.Bookmark(result.ToHash("data"), storyId, storyRelayId);
+            result = GameService.Answer(result.ToHash("data"), dinosaurId, _result);
         }
 
         //  记录日志

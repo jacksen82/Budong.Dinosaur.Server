@@ -32,18 +32,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="aliyun-net-sdk-core">
-      <HintPath>DLL\aliyun-net-sdk-core.dll</HintPath>
-    </Reference>
-    <Reference Include="aliyun-net-sdk-dybaseapi">
-      <HintPath>DLL\aliyun-net-sdk-dybaseapi.dll</HintPath>
-    </Reference>
-    <Reference Include="aliyun-net-sdk-dysmsapi">
-      <HintPath>DLL\aliyun-net-sdk-dysmsapi.dll</HintPath>
-    </Reference>
-    <Reference Include="Aliyun.MNS">
-      <HintPath>DLL\Aliyun.MNS.dll</HintPath>
-    </Reference>
     <Reference Include="MySql.Data">
       <HintPath>Libs\MySql.Data.dll</HintPath>
     </Reference>
@@ -65,7 +53,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Secret\DES.cs" />
     <Compile Include="Secret\MD5.cs" />
-    <Compile Include="Third\Aliyun\SMS.cs" />
     <Compile Include="Third\Wechat\AES.cs" />
     <Compile Include="Third\Wechat\API.cs" />
     <Compile Include="Utils\Charset.cs" />
@@ -79,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DLL\" />
+    <Folder Include="Third\Aliyun\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

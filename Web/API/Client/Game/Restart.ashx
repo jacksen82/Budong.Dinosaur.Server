@@ -1,15 +1,13 @@
-﻿<%@ WebHandler Language="C#" Class="Branch" %>
+﻿<%@ WebHandler Language="C#" Class="Restart" %>
 
 using System.Web;
 using Budong.Common.Utils;
 
-public class Branch : IHttpHandler {
+public class Restart : IHttpHandler {
 
     public void ProcessRequest(HttpContext context)
     {
         //  格式化参数
-        int storyId = Parse.ToInt(context.Request.Params["storyId"]);
-        int storyRelayId = Parse.ToInt(context.Request.Params["storyRelayId"]);
         string session3rd = context.Request.Params["session3rd"];
 
         //  定义返回结果
@@ -17,7 +15,7 @@ public class Branch : IHttpHandler {
 
         if (result.ToInt("code") == 0)
         {
-            result = StoryRelayService.Branch(result.ToHash("data"), storyId, storyRelayId);
+            result = GameService.Restart(result.ToHash("data"));
         }
 
         //  记录日志

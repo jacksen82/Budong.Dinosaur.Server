@@ -1,13 +1,13 @@
-﻿<%@ WebHandler Language="C#" Class="Handler" %>
+﻿<%@ WebHandler Language="C#" Class="Test" %>
 
 using System;
 using System.Web;
 
-public class Handler : IHttpHandler {
+public class Test : IHttpHandler {
 
     public void ProcessRequest(HttpContext context)
     {
-
+            context.Response.Write(new Random().Next(0,4));
     }
 
     public bool IsReusable {

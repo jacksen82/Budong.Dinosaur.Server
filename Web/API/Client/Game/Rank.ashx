@@ -1,15 +1,13 @@
-﻿<%@ WebHandler Language="C#" Class="List" %>
+﻿<%@ WebHandler Language="C#" Class="Rank" %>
 
 using System.Web;
 using Budong.Common.Utils;
 
-public class List : IHttpHandler {
+public class Rank : IHttpHandler {
 
     public void ProcessRequest(HttpContext context)
     {
         //  格式化参数
-        int pageId = Parse.ToInt(context.Request.Params["pageId"]);
-        int pageSize = Parse.ToInt(context.Request.Params["pageSize"], 10);
         string session3rd = context.Request.Params["session3rd"];
 
         //  定义返回结果
@@ -17,7 +15,7 @@ public class List : IHttpHandler {
 
         if (result.ToInt("code") == 0)
         {
-            result = ClientStoryService.List(result.ToHash("data"), pageId, pageSize);
+            result = GameService.Rank(result.ToHash("data"));
         }
 
         //  记录日志
